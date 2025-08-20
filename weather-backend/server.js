@@ -11,7 +11,7 @@ app.use(cors());
 app.get("/api/weather/:city", async (req, res) => {
   const city = req.params.city;
   const apiKey = process.env.OPENWEATHER_API_KEY;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
 
   try {
     const response = await axios.get(apiUrl);

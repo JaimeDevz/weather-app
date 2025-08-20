@@ -32,6 +32,7 @@ const weatherSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchWeather.fulfilled, (state, action) => {
+        console.log("Payload received by Redux:", action.payload);
         state.status = "succeeded";
         state.weatherData = action.payload;
       })
